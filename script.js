@@ -52,11 +52,17 @@ export function aufgabe05(args) {
 
 export function aufgabe06(args) {
   const input = args
-  const result = []
-
-  return result.join("")
-
-  for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
+  if (input === "") {
+    return false
   }
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i].toLowerCase()
+    if (currentElement.charCodeAt() < 97 || currentElement.charCodeAt() > 122) {
+      if (currentElement.charCodeAt() != 32) {
+        return true
+      }
+    }
+  }
+
+  return false
 }
